@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: JavaScript - Dr. Eman</title>
+</head>
+<body>
+    <h1>Hellow ITI</h1>
+
+    <script>
+        console.log("value of num1 in internal script before declaration: ", num1);
+        //The engine did not hiost it yet, so it will throw ReferenceError: num1 is not defined
+
+        console.log("value of num2 in internal script before declaration: ", num2);
+        console.log("value of num3 in internal script before declaration: ", num3);
+
+        // The interpreter didn't even bother to see the last 2 console.logs
+    </script>
+
+    <script src="External.js"></script>
+
+    <script>
+        console.log("value of num1 in internal script after declaration: ", num1);
+        //printed  no issues
+
+        console.log("value of num2 in internal script after declaration: ", num2);
+        console.log("value of num3 in internal script after declaration: ", num3);
+    </script>
+
+    <script>
+        console.log("num1 + num2: ",num1 + num2);//5.9
+        console.log("flag + num1: ",flag + num1);//4
+        console.log("firstName + flag: ",firstName + flag);//Ibrahimtrue
+        console.log("num1 + firstName: ",num1 + firstName);//3Ibrahim
+        console.log("num1 + num2 + firstName: ",num1 + num2 + firstName);//5.9Ibrahim
+        console.log("num1 + firstName + num2: ",num1 + firstName + num2);//3Ibrahim2.9
+        console.log("num1 * flag: ",num1 * flag);//3
+        console.log("num1/lastName: ",num1/lastName);//NaN
+        console.log(`Full Name: ${firstName} ${middleName} ${lastName}`);//Full Name: Ibrahim Mohamed Eita
+
+        console.table({num1, num2, num3, flag, firstName, middleName, lastName});
+    </script>
+    <script src="strict.js"></script>
+</body>
+</html>
